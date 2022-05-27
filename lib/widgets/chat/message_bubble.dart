@@ -22,14 +22,29 @@ class MessageBubble extends StatelessWidget {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                color: isMe ? Colors.grey[300] : Theme.of(context).accentColor,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  topRight: Radius.circular(12),
-                  bottomLeft: !isMe ? Radius.circular(0) : Radius.circular(12),
-                  bottomRight: isMe ? Radius.circular(0) : Radius.circular(12),
-                ),
-              ),
+                  color:
+                      isMe ? Colors.grey[300] : Theme.of(context).accentColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12),
+                    bottomLeft:
+                        !isMe ? Radius.circular(0) : Radius.circular(12),
+                    bottomRight:
+                        isMe ? Radius.circular(0) : Radius.circular(12),
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: isMe
+                        ? [
+                            Colors.grey,
+                            Colors.white,
+                          ]
+                        : [
+                            Theme.of(context).accentColor,
+                            Theme.of(context).dividerColor,
+                          ],
+                  )),
               width: 140,
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),

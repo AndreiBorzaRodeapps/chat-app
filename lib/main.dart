@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
         errorColor: Colors.redAccent,
         primaryColor: Colors.indigo,
         accentColor: Colors.amber,
+        dividerColor: Colors.orange,
         backgroundColor: Colors.indigo,
         accentColorBrightness: Brightness.dark,
         buttonTheme: ButtonTheme.of(context).copyWith(
